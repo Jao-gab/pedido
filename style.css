@@ -1,0 +1,507 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+        width: 100%;
+    height: 100%;
+    overflow: hidden;
+    min-height: 100vh;
+
+    font-family: Arial, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            #351521 0%,
+            #180b12 45%,
+            #080509 100%
+        );
+
+    color: #333;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   TELAS
+========================= */
+
+.tela {
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: scale(1.05);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease,
+        visibility 0.8s;
+
+    z-index: 5;
+}
+
+.tela.ativa {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: scale(1);
+}
+
+
+/* =========================
+   ABERTURA
+========================= */
+
+.abertura-conteudo {
+    text-align: center;
+
+    color: white;
+
+    max-width: 500px;
+}
+
+.heart-grande {
+    font-size: 80px;
+
+    margin-bottom: 20px;
+
+    animation: pulsar 1.5s infinite;
+
+    filter:
+        drop-shadow(0 0 15px rgba(255, 70, 100, 0.5));
+}
+
+.abertura-conteudo h1 {
+    font-size: 48px;
+
+    margin-bottom: 15px;
+}
+
+.abertura-conteudo p {
+    font-size: 20px;
+
+    color: #d8c4ca;
+
+    margin-bottom: 35px;
+}
+
+#abertura button {
+    padding: 16px 40px;
+
+    border: none;
+
+    border-radius: 40px;
+
+    background: #ff4d6d;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 30px rgba(255, 77, 109, 0.35);
+
+    transition: 0.3s;
+}
+
+#abertura button:hover {
+    transform: scale(1.1);
+
+    box-shadow:
+        0 10px 40px rgba(255, 77, 109, 0.5);
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+    width: 100%;
+
+    max-width: 650px;
+
+    padding: 45px 40px;
+
+    overflow: visible;
+
+    background: rgba(25, 16, 21, 0.96);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 30px;
+
+    text-align: center;
+
+    color: white;
+
+    box-shadow:
+        0 20px 70px rgba(0, 0, 0, 0.6),
+        0 0 40px rgba(255, 60, 100, 0.08);
+
+    position: relative;
+}
+
+.heart {
+    font-size: 55px;
+
+    animation: pulsar 1.5s infinite;
+
+    filter:
+        drop-shadow(0 0 12px rgba(255, 70, 100, 0.5));
+}
+
+.card h1 {
+    margin-top: 10px;
+
+    font-size: 30px;
+}
+
+.message {
+    margin-top: 18px;
+
+    color: #c9b9bf;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   CONTADOR
+========================= */
+
+.contador-area {
+    margin: 25px 0;
+
+    padding: 20px;
+
+    background: rgba(255, 77, 109, 0.08);
+
+    border: 1px solid rgba(255, 77, 109, 0.15);
+
+    border-radius: 20px;
+}
+
+.contador-area p {
+    color: #a9979e;
+
+    margin-bottom: 8px;
+}
+
+#contador {
+    font-size: 24px;
+
+    font-weight: bold;
+
+    color: #ff6682;
+
+    line-height: 1.5;
+}
+
+.contador-area span {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #8f7d84;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   PERGUNTA
+========================= */
+
+.question {
+    margin-top: 25px;
+
+    color: #ff6682;
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    text-shadow:
+        0 0 15px rgba(255, 77, 109, 0.15);
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+.buttons {
+    position: relative;
+
+    height: 100px;
+
+    margin-top: 25px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+button {
+    border: none;
+
+    padding: 15px 32px;
+
+    border-radius: 30px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+#sim {
+    background: #ff4d6d;
+
+    color: white;
+
+    box-shadow:
+        0 8px 25px rgba(255, 77, 109, 0.3);
+}
+
+#sim:hover {
+    transform: scale(1.1);
+
+    box-shadow:
+        0 10px 35px rgba(255, 77, 109, 0.45);
+}
+
+#nao {
+    background: #30282c;
+
+    color: #a99da1;
+
+    position: relative;
+}
+
+
+/* =========================
+   TELA FINAL
+========================= */
+
+.final-conteudo {
+    max-width: 650px;
+
+    padding: 45px 35px;
+
+    background: rgba(25, 16, 21, 0.97);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 30px;
+
+    text-align: center;
+
+    color: white;
+
+    box-shadow:
+        0 20px 70px rgba(0, 0, 0, 0.6),
+        0 0 50px rgba(255, 60, 100, 0.1);
+}
+
+.final-conteudo h1 {
+    color: #ff6682;
+
+    font-size: 40px;
+
+    margin-bottom: 25px;
+}
+
+.final-mensagem {
+    color: #c9b9bf;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    margin-bottom: 18px;
+}
+
+.final-destaque {
+    color: #ff6682;
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    margin: 25px 0;
+}
+
+.final-assinatura {
+    margin-top: 30px;
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    color: #ff6682;
+}
+
+.coracoes-finais {
+    margin-top: 25px;
+
+    font-size: 25px;
+
+    letter-spacing: 8px;
+}
+
+
+/* =========================
+   CORAÇÕES FLUTUANTES
+========================= */
+
+#hearts {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.floating-heart {
+    position: absolute;
+
+    bottom: -50px;
+
+    font-size: 20px;
+
+    opacity: 0.55;
+
+    animation: subir linear forwards;
+
+    filter:
+        drop-shadow(0 0 5px rgba(255, 70, 100, 0.4));
+}
+
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes pulsar {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes subir {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.55;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .abertura-conteudo h1 {
+        font-size: 38px;
+    }
+
+    .abertura-conteudo p {
+        font-size: 17px;
+    }
+
+    .card {
+        padding: 30px 22px;
+    }
+
+    .card h1 {
+        font-size: 25px;
+    }
+
+    .message {
+        font-size: 16px;
+    }
+
+    .question {
+        font-size: 23px;
+    }
+
+    #contador {
+        font-size: 19px;
+    }
+
+    .final-conteudo {
+        padding: 35px 22px;
+    }
+
+    .final-conteudo h1 {
+        font-size: 32px;
+    }
+
+    .final-mensagem {
+        font-size: 16px;
+    }
+
+    .final-destaque {
+        font-size: 21px;
+    }
+}
+
